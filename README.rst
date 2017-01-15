@@ -73,7 +73,7 @@ Options
 +-----------------------+-------------+----------+-------------------------------------------------------------------------------------------------------+
 | ``verify_ssl``        | ``bool``    | no       | Verify SSL when connect, use this option as ``False`` when need to test with self-signed certificates |
 +-----------------------+-------------+----------+-------------------------------------------------------------------------------------------------------+
-| ``query_string_auth`` | ``bool``    | no       | Force Basic Authentication as query string when ``True`` and using under HTTPS, default is ``False``  |
+| ``query_string_auth`` | ``bool``    | no       | Force Basic Authentication as query string when ``True`` and under HTTPS, default is ``False``  |
 +-----------------------+-------------+----------+-------------------------------------------------------------------------------------------------------+
 
 Methods
@@ -122,6 +122,8 @@ Example of returned data:
 .. code-block:: bash
 
     >>> r = wcapi.get("products")
+    >>> r = wcapi.get('products?page=2')
+    >>> r = wcapi.get('products/tags/34')
     >>> r.status_code
     200
     >>> r.headers['content-type']
